@@ -58,9 +58,84 @@
 // }
 
 
-function convertCelciusToFarenheight(celcius) {
-    let farenheight = celcius * 1.8 + 32;
-    return farenheight;
+// function convertCelciusToFarenheight(celcius) {
+//     let farenheight = celcius * 1.8 + 32;
+//     return farenheight;
+// }
+
+// console.log(convertCelciusToFarenheight(10))
+
+/*
+    Sorting Arrays
+
+let grades = ['A','A','B','B','C','Fail','Fail']
+
+//shorthand
+let pass = grades.filter(grades => grades !== 'Fail')
+
+console.log(pass)
+
+//longhand
+let fail = grades.filter((grades) => { 
+    if (grades === 'Fail') {
+    return true;
+    }
+})
+
+console.log(fail);
+
+//noFilterMethod
+
+let grades = ['A+','A','Fail']
+let pass = []
+
+for (i = 0; i < grades.length; i++) {
+    if (grades[i] !== 'Fail') {
+        pass.push(grades[i])
+    }
 }
 
-console.log(convertCelciusToFarenheight(10))
+console.log(pass)
+*/
+
+/*
+    Mapping Arrays
+
+
+//shorthand
+let dollars = [1,5,10,3]
+
+let cents = dollars.map(elem => elem * 100)
+
+console.log(cents)
+
+//longhand
+let cents = dollars.map((elem) => {
+    return elem * 100
+})
+
+console.log(cents)
+
+//noMapMethod
+
+let cents = []
+
+for (i = 0; i < dollars.length; i++) {
+    cents.push(dollars[i] * 100) 
+}
+
+console.log(cents)
+
+*/
+
+/* 
+    Creating a register function
+*/
+
+let user = {}
+
+register();
+
+function register(username, email, password, subscriptionStatus, discordId, lessonsCompleted) {
+    
+}
