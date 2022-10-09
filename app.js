@@ -132,10 +132,50 @@ console.log(cents)
     Creating a register function
 */
 
-let user = {}
+let users = []
 
-register();
+function register(user) { 
+    users.push(user);
+    return;
+    }
 
-function register(username, email, password, subscriptionStatus, discordId, lessonsCompleted) {
-    
+register ({
+    username: "sam", 
+    email: "samme1210@gmail.com", 
+    password: "1234", 
+    subscriptionStatus: "Vip",
+    discordId: "#3543245",
+    lessonsCompleted: [0, 2]
+});
+
+register ({
+    username: "zen",
+    email: "zen@outlook.co.uk",
+    password: "4321",
+    subscriptionStatus: "",
+    discordId: "#4532898",
+    lessonsCompleted: [0, 6]
+})
+
+console.log(users)
+/*
+    login function
+*/
+
+function login(email, password) {
+    for (i = 0; i < users.length; i++) {
+        if (users[i].email === email) {
+            if (users[i].password === password) {
+                console.log("log the user in - details are correct");
+            } else {
+                console.log("password is incorrect please try again");
+            }
+            return;
+        }
+    }
+    console.log("this email does not exsist");
 }
+
+login("samme1210@gmail.com", "1234");
+
+login("zen@outlook.co.uk", "3452")
