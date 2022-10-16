@@ -130,7 +130,7 @@ console.log(cents)
 
 /* 
     Creating a register function
-*/
+
 
 let users = []
 
@@ -158,9 +158,11 @@ register ({
 })
 
 console.log(users)
+
+*/
 /*
     login function
-*/
+
 
 function login(email, password) {
     for (i = 0; i < users.length; i++) {
@@ -178,4 +180,60 @@ function login(email, password) {
 
 login("samme1210@gmail.com", "1234");
 
-login("zen@outlook.co.uk", "3452")
+login("zen@outlook.co.uk", "3452");
+
+*/
+
+/*
+
+    DOM - making a working button
+
+
+
+function turnRed() {
+    document.querySelector("#title").style.color = 'red'
+    console.log('clicked')
+}
+
+*/
+
+/* 
+    creating and using a promise
+
+
+const statusRef = document.querySelector(".status");
+const videoRef = document.querySelector(".video")
+
+function getSubscriptionStatus() {
+    return new Promise((resolve, reject) => {
+        resolve("undefined")
+    })
+}
+
+function getVideo (subscriptionStatus) {
+    return new Promise ((resolve, reject) => {
+        if (subscriptionStatus === "Vip") {
+            resolve("show video")
+        } else if (subscriptionStatus === 'free') {
+            resolve("show trailer")
+        } else {
+            reject("no video")
+        }
+    })
+}
+
+async function main() {
+    const status = (await getSubscriptionStatus());
+    statusRef.innerHTML = status
+    try {
+        console.log(await getVideo(status));
+    } catch (e) {
+        console.log(e);
+        videoRef.innerHTML = e;
+    }
+}
+
+main();
+
+*/
+
